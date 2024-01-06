@@ -1,1 +1,20 @@
-a
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+function Script()
+	local Window = Library.CreateLib("Five Nights At André's Doom", "Synapse")
+	
+	local Player = Window:NewTab("Player")
+	local Section = Player:NewSection("Character")
+	
+	Section:NewSlider("WalkSpeed", "Altere a velocidade do personagem", 250, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+	
+	Section:NewSlider("JumpPower", "Altere o pulo do personagem", 250, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+	end)
+end
+
+--if game.GameId == 8561718367 then
+	Script()
+--end
